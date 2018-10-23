@@ -1,0 +1,10 @@
+GRAPHICS: END OF SUNDAY
+FINISHING TOUCHES: END OF MONDAY
+
+* Viewport to 1
+* set onclick with flashlight (make ring bigger too)
+* Present and kick butt
+
+* FIX MINIMAP ON FIREFOX (script doesn't work)
+
+** HOST WITH AWARDSPACE, IT DOESN'T GET BLOCKED. KEEP AN OFFLINE COPY HANDY THOUGH.

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../resizer.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <style>
+            .oscillator {
+                animation: oscillation 20s infinite linear;
+            }
+            .run {
+                position:absolute;bottom:130px;left:0;width:100px;z-index:6;left:0;transform: translateX(-100%);
+            }
+            @keyframes oscillation {
+                0%,20% {
+                    left:0;
+                    transform: translateX(-100%);
+                }
+                30% {
+                    left:100%;
+                    transform: translateX(0);
+                }
+                50% {
+                    transform: translateX(0) scaleX(-1);
+                }
+                70% {
+                    left:100%;
+                    transform: translateX(0) scaleX(-1);
+                }
+                80%,100% {
+                    left:0;
+                    transform: translateX(-100%) scaleX(-1);
+                }
+            }
+            #bg {
+                background-image:linear-gradient(#9D1515, #990000);
+            }
+        </style>
+    </head>
+    <!-- fixed body may present issues -->
+    <body style="position: fixed;width:100%;height:100%;overflow:hidden;">
+        <div id="bg"></div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:800px;height:100%;max-height:300px;z-index:998">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:lightgray;font-size:16pt;width:100%;padding:20px;box-sizing:border-box;">
+                <div style="color:white;font-weight:bold;font-size:40pt;margin-bottom:10px;">Hey again...</div>
+                <div style="margin: 0 0 20px 0">Just wanted to let you in on something: check your <span style="color:white;">console (f12 key, find 'Console')</span>. I've got a surprise for you!</div>
+                <div class="closeBtn" onclick="$('#content').css('filter','none');$(this).parent().parent().remove()">YOU CAN'T SCARE ME.</div>
+            </div>
+        </div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle IX</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Maleficent</span>
+            </span>
+            <div id="pgToolDisplay">
+                <p>Here lies the worst websites of all; due to their malicious nature, they may not be named here to prevent harm to viewers.</p>
+                <p>These people served as the online version of the Trojan horse; thinking they downloaded something good, countless became horrified to realize that what they chased after actually harmed them. Likewise, shades chase after a thin beam of light from above, thinking that it represents a way to heaven; however, as they chase the light, they are brutally slashed and beaten by demons that appear in their path, preventing them from finally capturing that thin beam to salvation. They never give up hope, however, creating out a lifetime of punishment.</p>
+                <p><strong>Here, Satan is portrayed by an organic depiction of the Morris worm,</strong> a hellish computer worm that rocked the early Internet. This worm was not written to cause damage, with its original function being to gauge the size of the Internet. However, a distinct feature with the worm’s copy mechanism caused it to spread rapidly to many of the early internet-enabled computers and cause massive damage to the fledgling Internet. This monster effectively represents Satan as it originally served a useful purpose, but in its lifetime it fell from its purpose and became the first of the scourge of evil that has come to characterize the malicious nature of some computer programs.</p>
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position:fixed;left:0;top:0;width:100%;height:100%;filter:blur(20px) brightness(.5)">
+        <img class="oscillator" src="Beam.svg" style="position:absolute;bottom:130px;left:0;width:auto;height:calc(100% - 130px);z-index:6">
+        <!--higher-up (farther back) should be rendered over by closer (lower) ones -->
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:153px;">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:150px;">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:147px;">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:144px;">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:141px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:138px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:135px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:132px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:129px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:126px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:123px">
+        <img class="oscillator run" src="ShadeChase.svg" style="bottom:120px">
+
+        <div style="position: absolute;bottom:0;left:0;width:100%;">
+            <div style="position:absolute;top:60px;left:0;height:calc(100% - 60px);width:100%;background-color: #666666;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;"></div>
+            <div style="position:relative;display:block;height:500px;margin:auto;max-width:760px">
+                 <img src="demonslash1.svg" style="width:300px;position:absolute;left:0;top:-100px;filter:brightness(.9)" />
+                 <img src="demonslash2.svg" style="width:300px;position:absolute;right:0;top:-70px;filter:brightness(.9)" />
+                <div style="width:200px;position:absolute;height:calc(100% - 60px);left:50%;top:60px;transform: translateX(-50%)">
+                    <img src="holeworm.svg" style="position:absolute;left:50%;transform:translateX(-50%);bottom:200px;height:calc(100% + 100px);z-index:6">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            $(".run").each(function() {
+                // 1 to 3 second delay
+                var delay = "" + (1+Math.random()*3) + "s";
+                $(this).css("animation-delay", delay);
+            });
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+            
+            // thanks to https://ourcodeworld.com/articles/read/257/how-to-get-the-client-ip-address-with-javascript-only for sharing this script with the world
+            function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
+                    //compatibility for firefox and chrome
+                var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+                var pc = new myPeerConnection({
+                    iceServers: []
+                }),
+                noop = function() {},
+                localIPs = {},
+                ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,
+                key;
+
+                function iterateIP(ip) {
+                    if (!localIPs[ip]) onNewIP(ip);
+                    localIPs[ip] = true;
+                }
+
+                 //create a bogus data channel
+                pc.createDataChannel("");
+
+                // create offer and set local description
+                pc.createOffer().then(function(sdp) {
+                    sdp.sdp.split('\n').forEach(function(line) {
+                        if (line.indexOf('candidate') < 0) return;
+                        line.match(ipRegex).forEach(iterateIP);
+                    });
+
+                    pc.setLocalDescription(sdp, noop, noop);
+                }).catch(function(reason) {
+                    // An error occurred, so handle the failure to connect
+                });
+
+                //listen for candidate events
+                pc.onicecandidate = function(ice) {
+                    if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
+                    ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+                };
+            }
+
+            // Usage
+            $(document).ready(function() {
+                let count = 0;
+                console.log("Timestamp: " + new Date(Date.now()));
+                console.log("[DEV] Mwahaha! Your data is mine for the taking!");
+                console.log("[DEV] Fetched user-agent header: " + navigator.userAgent);
+                var req = new XMLHttpRequest();
+                req.open('GET', document.location, false);
+                req.send(null);
+                console.log("[DEV] Headers: " + req.getAllResponseHeaders().toLowerCase());
+                getUserIP(function(ip){
+                    count++;
+                    console.log("[DEV] Fetched IP: " + ip);
+                    if(count>=2) console.log("[DEV] Huh. This is meaningless. Oh well.");
+                });
+            });
+        </script>
+    </body>
+</html>

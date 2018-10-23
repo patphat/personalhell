@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <script src="../resizer.js"></script>
+        <style>
+            #bg {
+                background-image:linear-gradient(#A95454, #A53F3F);
+            }
+            @-webkit-keyframes struggle {
+                0% {
+                        -webkit-transform: translateX(1px);
+                }
+                50% {
+                        transform: translateX(-1px);
+                }
+                100% {
+                        -webkit-transform: translateX(1px);
+                }
+            }
+            #sufferers {
+                animation: struggle 1s infinite ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle VI</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Poor Cartographers</span>
+            </span>
+            <div id="pgToolDisplay" style="position:relative;overflow-y:hidden;">
+                <p>Here lies <a target="_parent" href="http://www.barrington220.org">Barrington's own website</a>, who couldn't break free of its sin despite its best efforts.</p>
+                <p>These shades once featured websites that had poor navigational abilities, making it extremely frustrating for users to navigate among their many pages. Since they hindered the ability of many to navigate their sites in life, now they are lashed to the ground of Hell, left to starve and thirst for all eternity.</p>
+                <p>An oasis of goods lies near the middle end of this circle, unreachable by any of the starving and thirsting shades that reside there. This represents how in both life and death, people left unable to navigate were unable to reach their destinations, and by extension, unable to satisfy their needs at the time--only in Hell, the creators are now the ones that suffer.</p>
+                <div id="blocker" style="position: absolute;top:0;left:0;width:100%;height:100%;background-color: #3a3a3a;text-align:center;color:white">
+                    <div style="position:absolute;top:90%;left:90%;transform: translate(-50%, -50%)">
+                        <div class="closeBtn" style="font-size:4pt;padding:2px;" onclick="$(this).parent().parent().parent().css('overflow-y', 'scroll');$(this).parent().parent().remove()">TO CONTENT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           
+            <div style="position:relative;display:block;height:600px;">
+                <div style="position:absolute;top:60px;left:0;height:100%;width:100%;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;"></div>
+                <div id="sufferers" style="position:absolute;width:calc(100% - 620px);height:100%;top:0;left:0;background-image:url('groundvi.svg');background-size: 500px auto;background-position:right top;margin:auto;"></div>
+                <div style="position:absolute;width:600px;height:calc(100% - 60px);right:0;top:60px;background-color:#1f4721;background-image:url('grtile.svg');background-size:150px;"></div>
+                <img style="position:absolute;width:auto;right:0;top:-376px;height:300%;" src="treelong.svg"/>
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <script src="../resizer.js"></script>
+        <style>
+            #changePrev,#changeNext {
+                animation: rotation 2s infinite linear;
+            }
+            @-webkit-keyframes rotation {
+                from {
+                        -webkit-transform: rotate(0deg);
+                }
+                to {
+                        -webkit-transform: rotate(359deg);
+                }
+            }
+            
+            .runner {
+                animation: run 4s infinite ease-in-out;width:200px;position:absolute;left:-100px;right:calc(100% - 100px);bottom:0;
+            }
+            
+            @keyframes run {
+                0%,100% {
+                    left:-100px;
+                    right:calc(100% - 100px);
+                }
+                50% {
+                    left: calc(100% - 100px);
+                    right:-100px;
+                }
+            }
+            
+            #bg {
+                /*background-image:linear-gradient(#bfbfbf, #baa9a9);*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle I</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc"><marquee>The Glamorous</marquee></span>
+            </span>
+            <div id="pgToolDisplay">
+                <p>Here suffers <a target="_parent" href="http://www.dokimos.org/ajff/">dokimos.org</a> and many more independent websites like it.</p>
+                <p>In life, these people offended the eye with an excess of animation. In a world characterized by quick operations that direct clients where they need to go, a website has no time to slow others down with excess movement. Just as these shades offended people in life with excess animation, now they are battered by a nearly epileptic level of animation that permeates the world around them. The sky and the floor both shift with rapid intensities, causing great confusion and strain to those that reside there.</p>
+            </div>
+        </div>
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           
+            
+            <div style="position:relative;display:block;height:110px;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat">
+                <div style="position:absolute;display:block;height:100%;width:100%;argin:auto;bottom:100%">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                </div>
+                <div style="position:absolute;display:block;height:100%;width:100%;argin:auto;bottom:calc(100% - 100px)">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                    <img class="runner" src="wsa.svg" style="">
+                </div>
+            </div>
+        </div>
+        <div class="warning" style="background-color:black;width:100%;height:100%;position:fixed;color:white;top:0;left:0;z-index:5;">
+            <div style="position:absolute;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);text-align:center;">
+                <div style="font-size:24pt; font-weight:bold;margin-bottom:5px;">Epilepsy Warning!</div>
+                <div style="margin-bottom:20px;">If you aren't tolerant of rapid changes in light, please skip this stage using navigation menu.</div> 
+                <div class="closeBtn" onclick="$(this).parent().parent().remove()">CLOSE</div>
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            $(document).ready(function() {
+                changeTitle();
+                setInterval(function() {
+                    $("#bg").css("background-color", randHexColor());
+                }, 20);
+            });
+
+            function changeTitle() {
+                $("#title").fadeToggle(500, changeTitle);
+            }
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+            
+            $(".runner").each(function() {
+                // 1 to 3 second delay
+                var delay = "-" + (1+Math.random()*3) + "s";
+                var duration = "" + (2+Math.random()*3) + "s";
+                console.log(delay);
+                $(this).css("animation-delay", delay);
+                $(this).css("animation-duration", duration);
+            });
+            
+            var randHexColor = function() {
+                return "#" + randHexBit() + randHexBit() + randHexBit();
+            }
+            
+            var randHexBit = function() {
+                var hex = parseInt(Math.random()*256, 10).toString(16);
+                if(hex.length!=2) hex = "0" + hex;
+                return hex;
+            }
+        </script>
+    </body>
+</html>

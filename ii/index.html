@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <script src="../resizer.js"></script>
+        <style>
+            #fg:before {
+                content:"";position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background-color: black;opacity: .5; z-index:2;
+            }
+            #bg {
+                background-image:linear-gradient(#baa9a9, #B69494);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="fg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Cicrel Ii</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Grammerless</span>
+            </span>
+            <div id="pgToolDisplay">
+                <p>Here suffers <a target="_parent" href="https://birdsarentreal.com/pages/who-are-we">Birds Aren't Real</a>, among many more.</p>
+                <p>At times, the laziness of these shades in terms of checking their work either confused or irritated many who were in search of obscure bits of information. Due to their grammatical errors, these websites failed to convey the full extent of meaning that they intended to due to the careless mistakes of those creating them. Now, these spirits reside in hell with conditions mimicking complete global aphasia, unable to comprehend each other’s speech nor produce comprehensible speech; they are unable to convey their ideas in death, just like in life. They are now forced to bottle themselves up to the world since they may no longer have meaningful conversations. In addition, to prevent visual communication, this layer is almost pitch black, rendering the shades completely blind.</p></div>
+        </div>
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           
+            <div style="position:relative;display:block;height:100%;width:100%;max-width:760px;margin:auto;">
+                <img id="runner" src="bumpshade.svg" style="height:400px;position:absolute;left:0;bottom:0;">
+                <img id="runner2" src="talkshade.svg" style="width:250px;position:absolute;right:0;bottom:0">
+            </div>
+            <div style="position:relative;display:block;height:110px;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;width:100%;margin:auto;"></div>
+        </div>
+        <img id="light" style="position:fixed;top:50%;left:50%;width:300%;transform:translateX(-50%) translateY(-50%);z-index:5;pointer-events: none;" src="Light.svg">
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            $("body").on("mousemove", function(event) {
+                $("#light").css("left", event.pageX+"px");
+                $("#light").css("top", event.pageY+"px");
+                
+                /*alert("moved!");*/
+            });
+            
+            $("body").on("mouseout", function(event) {
+                $("#light").css("left", "50%");
+                $("#light").css("top", "50%");
+                
+                /*alert("moved!");*/
+            });
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>

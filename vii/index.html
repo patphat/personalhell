@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../resizer.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <style>
+            #bg {
+                background-image:linear-gradient(#A53F3F, #A12A2A);
+            }
+            @-webkit-keyframes struggle {
+                0% {
+                        -webkit-transform: translateX(1px);
+                }
+                50% {
+                        transform: translateX(-1px);
+                }
+                100% {
+                        -webkit-transform: translateX(1px);
+                }
+            }
+            #sufferers {
+                animation: struggle 1s infinite ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle VII</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Inconvenient</span>
+            </span>
+            <div id="pgToolDisplay" style="position:relative;">
+                <p>Here lies <a target="_parent" href="https://www.arstechnica.com">Ars Technica</a>, <a target="_parent" href="https://www.foxnews.com">FOX News</a>, <a target="_parent" href="https://www.cnbs.com">CNBS</a>, <a target="_parent" href="https://www.express.com">Express, and many other news sites like them.</p>
+                <p>These shades were the ones that filled their sites with countless ads that permeated their content and distracted others with their flashy animations and colors. However, these creators get sent to the seventh circle for forcing this content upon their multitudes of viewers. </p>
+                <p>Sometimes, this excessive content merely annoys; other times, an accidental click on an advertisement can lead to five minutes of trying to escape the clutches of a particularly annoying web survey. Sometimes, these advertisements can even be malicious. For forcing this content down the throats of users, these souls are now gorged to the point of painful excess (and infinitely beyond it) in a direct contrast to the immobile shades of the above circle.</p>
+                <a target="_parent" href="https://www.justtheberkshires.com/advertising.htm" target="_parent" style="outline: none;text-decoration: none"><img src="https://www.justtheberkshires.com/images/Cruise-And-Flight-940-Anim-1.gif" style="width:calc(100% - 50px);display:block;margin:auto;"></a>
+                <p>These goods also rot as soon as they touch the person’s tongue, a reminder of the consistently rotten nature of the advertisements that they shoved down the throats of their viewers.</p>
+                <p><strong>Note:</strong> This circle does not include non-intrusive advertisements, such as those of Google, whose well-meshed advertisements do not offend the eye and can sometimes get you to your destination faster.</p>
+                
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           
+            <div style="position:relative;display:block;height:500px;">
+                <div style="position:absolute;top:60px;left:0;height:100%;width:100%;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;"></div>
+                <div id="sufferers" style="position:absolute;width:calc(100% - 620px);height:100%;top:0;left:0;background-image:url('groundvii.svg');background-size: 500px auto;background-position:right top;margin:auto;"></div>
+                <img style="position:absolute;width:600px;top:-80px;right:10px;" src="ff.svg"/>
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>

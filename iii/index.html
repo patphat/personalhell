@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <script src="../resizer.js"></script>
+        <style>
+            #bg {
+                background-image:linear-gradient(#B69494, #B27F7F);
+            }
+            #google {
+                animation: flotation 2s infinite ease-in-out;
+            }
+            @-webkit-keyframes flotation {
+                0% {
+                        -webkit-transform: translateX(-50%) translateY(-10px);
+                }
+                50% {
+                        -webkit-transform: translateX(-50%) translateY(10px);
+                }
+                100% {
+                        -webkit-transform: translateX(-50%) translateY(-10px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span style="color:lime;background-color:aqua;padding:5px;">Circle III</span>
+                    <div id="pgTool" style="background-color:whitesmoke"></div>
+                </span>
+                <span class="desc" style="color:yellow;background-color:hotpink;padding:5px;">The Grotesque</span>
+            </span>
+            <div id="pgToolDisplay" style="color:blue;background-color: red"><p>Here suffers <a target="_parent" href="https://livespringwater.com/pages/frequently-asked-questions">Live Spring Water</a>, a mis-styled website promoting the consumption pure stream water.</p><p>Here lie those who horrified the world with their website's disgusting appearances. In nature, unappealing things either have function or come about by accident; with these websites, neither was the case. These were created by a conscious effort, a soul who thought nothing of the distaste or strain that these appearances would cause others. As these souls offended others with their websites' appearances, now they too share this unattractive exterior. These souls are pitched into a liver of magma by the command of Google, where their outside melts into gruesome shapes before they manage to crawl out again. The amount of time that they spend in this lake is proportional to the gaudiness of the sites they created.</p></div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           
+            <div style="position:relative;display:block;height:100%;width:100%;margin:auto;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:75px;background-position: top right;background-repeat: repeat;filter: brightness(.356);">
+                <img src="river.svg" style="height:300px;display:block;margin:auto;">
+                
+            </div>
+            <div id="google" style="position:absolute;left:50%;bottom:400px">
+                <img src="googlyeye.svg" style="height:400px;">
+            </div>
+            
+            <div style="position:relative;display:block;height:300px;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;width:100%;margin:auto;">
+                <div style="position:absolute;display:flex;height:100px;width:100%;bottom:100%;justify-content: center;align-items: stretch;">
+                    <div style="order:0;flex-grow:99;background-image:url('ds1a.svg');background-position: bottom right;"></div>
+                    <div style="order:1;flex-grow:0;background-color:transparent;display:block;width:500px"></div>
+                    <div style="order:2;flex-grow:99;background-image:url('ds1a.svg');background-position: bottom right;transform: scaleX(-1)"></div>
+                </div>
+                <div style="position:absolute;display:flex;height:100px;width:100%;bottom:calc(100% - 120px);justify-content: center;align-items: stretch;z-index:2">
+                    <div style="order:0;flex-grow:99;background-image:url('ds1a.svg');background-position: bottom right"></div>
+                    <div style="order:1;flex-grow:0;background-color:transparent;display:block;width:550px"></div>
+                    <div style="order:2;flex-grow:99;background-image:url('ds1a.svg');background-position: bottom right;transform: scaleX(-1)"></div>
+                </div>
+                <div style="position:relative;display:block;height:100%;width:100%;max-width:760px;margin:auto;">
+                    <img src="bubblylake.svg" style="width:100px;display:block;margin:auto;height:100%;width:auto">
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>

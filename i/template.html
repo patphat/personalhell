@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <style>
+            #changeNext:after {
+                content:"↣";
+                transform: translateX(-50%) translateY(calc(-50% - 1px));
+            }
+            #changePrev:after {
+                content:"↢";
+                transform: translateX(-50%) translateY(calc(-50% - 1px));
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        
+        <a data-turbolinks="true" id="changePrev" href="https://google.com">
+            <div>The Forest</div>
+        </a>
+        <a data-turbolinks="true" id="changeNext" href="https://google.com">
+            <div>Circle II</div>
+        </a>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle I</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Souls of Glamor</span>
+            </span>
+            <div id="pgToolDisplay">Here are punished the souls of glamor. Through our screens, they offended our eyes with excessive movement in a world characterized by simple tranquility.<br><br>Now, they themselves are condemned to such a world, forever forbidden the pleasure of even a moment of calm.</div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>

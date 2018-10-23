@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../resizer.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <style>
+            .viii {
+                position:absolute;width:600px;
+                /*animation-play-state: paused;*/
+            }
+            
+            .invert {
+                transform:scaleX(-1);
+            }
+            
+            #ground {
+                
+                animation: pulsation 2s infinite ease-in-out;
+                background-color: #e69138;box-shadow:0 0 25px 5px #e69138;background-image:url(rhtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;
+            }
+            
+            @-webkit-keyframes pulsation {
+                0%,100% {
+                        filter: brightness(110%);
+                }
+                50% {
+                        filter: brightness(100%);
+                }
+            }
+            #bg {
+                background-image:linear-gradient(#A12A2A, #9D1515);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:800px;height:100%;max-height:300px;z-index:998">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:lightgray;font-size:16pt;width:100%;padding:20px;box-sizing:border-box;">
+                <div style="color:white;font-weight:bold;font-size:40pt;margin-bottom:10px;">Hey!</div>
+                <div style="margin: 0 0 20px 0">Just wanted to let you know to disable your <span style="color:white;">ad blocker</span>, even if you have already. Just a lovely little checkup.</div>
+                <div class="closeBtn" onclick="$('#content').css('filter','none');$(this).parent().parent().remove()">BEGONE, VILE MESSAGE</div>
+            </div>
+        </div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle VIII</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Relentless Beggars</span>
+            </span>
+            <div id="pgToolDisplay">
+                <p>Here lies <a target="_parent" href="https://www.spanishdict.com">SpanishDict</a>, <a target="_parent" href="https://www.businessinsider.com">Business Insider</a>, <a target="_parent" href="https://www.forbes.com">Forbes</a>, and many other beggars.</p>
+                <p>These shades hid their content behind messages and popups, plaguing visitors with pleas to disable the tools that protected them from countless fraudulent gimmicks online. Some went so far as to bar their content completely, mandating that viewers disable their ad blockers in order to continue.</p>
+                <p>These spirits are compelled to move in order to escape the ground beneath them, which glows red-hot and irritates their feet after short periods of standing. In hell, they suffer similarly to the Immobile in that their movement is restricted; only this time, they are struck by red-hot walls of advertisements that materialize upon movement in any direction, which stuns them for long enough that their feet become scalded by the floor, at which point they begin moving again.</p>
+                <p>In Hell, these spirits now feel what their users did in life; trying to escape the irritation of the scalding floor (representing the irritating advertisements that users once tried to escape with ad blockers), they are blocked by their own infernal creations--red-hot advertisements. The frequency at which these spirits are stunned varies; those that allowed others to simply close the pop ups are stunned less frequently than those that did not.</p>
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;filter:blur(20px) brightness(.5)">
+           <div id="ground" style="position:absolute;top:60px;left:0;height:100%;width:100%;overflow-x:visible;overflow-y:hidden;"></div>
+            <div style="position:relative;display:block;height:500px;margin:auto;max-width:760px;">
+                <img class="viii invert" style="top:-30px;left:0;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:30px;left:-42px;" src="viiisuffer.svg"/>
+                <img class="viii invert" style="top:65px;left:240px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:85px;left:-200px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:124px;left:-300px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:176px;left:-50px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:210px;left:240px;" src="viiisuffer.svg"/>
+                <img class="viii invert" style="top:250px;left:411px;" src="viiisuffer.svg"/>
+                <img class="viii invert" style="top:279px;left:-500px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:284px;left:150px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:310px;left:-62px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:345px;left:610px;" src="viiisuffer.svg"/>
+                <img class="viii invert" style="top:375px;left:-210px;" src="viiisuffer.svg"/>
+                <img class="viii" style="top:400px;left:-300px;" src="viiisuffer.svg"/>
+                <img class="viii invert" style="top:423px;left:-50px;" src="viiisuffer.svg"/>
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            /*$(".viii").each(function() {
+                // 0 to 4 second delay
+                var delay = "-" + parseInt((Math.random()*5)) + "s";
+                console.log(delay);
+                $(this).css("animation-delay", delay);
+                $(this).css("animation-play-state", "paused");
+            });*/
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+            
+            
+        </script>
+    </body>
+</html>

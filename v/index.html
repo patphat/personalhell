@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../resizer.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <style>
+            #bg {
+                background-image:linear-gradient(#AE6A6A, #A95454);
+            }
+            @keyframes flotation {
+                0% {
+                        transform: translateY(calc(-50% - 20px)) translateX(-50%);
+                }
+                50% {
+                        transform: translateY(calc(-50% + 20px)) translateX(-50%);
+                }
+                100% {
+                        transform: translateY(calc(-50% - 20px)) translateX(-50%);
+                }
+            }
+            @keyframes struggle {
+                0% {
+                        transform: translateX(1px);
+                }
+                50% {
+                        transform: translateX(-1px);
+                }
+                100% {
+                        transform: translateX(1px);
+                }
+            }
+            #sufferers {
+                animation: struggle 1s infinite ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle V</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Outdated</span>
+            </span>
+            <div id="pgToolDisplay" style="position:relative;overflow-y: hidden;">
+                <p>Here lies <a target="_parent" href="https://www.jblearning.com">JBLearning</a> and many other educational websites like it.</p>
+                <p>Here bleed the souls that employed old technology in their tools. Their Flash technology, among other devices (although Flash takes the cake here), were deprecated long ago, yet these services continued to employ them. Troubles that arise as these old technologies erode further has inconvenienced millions.</p>
+                <p>As these shades once presented an aged exterior, now their entire beings have eroded to a similar extent. Weary and broken, these shades shuffle around on a dying lawn, a reminder of the technologies they once failed to replace. This lawn is also filled with razors, cutting these shares as they try to avoid their painful incisions; as they try to escape their inevitable punishment, they lose more of themselves in blood as it soaks into the grass. Likewise, the more they used their outdated technologies in life, the more that these technologies gradually lost the functions they once possessed.</p>
+                <p>The lack of motion on this page also represents the nonfunctioning natures of these plugins.</p>
+                <div id="blocker" style="position: absolute;top:0;left:0;width:100%;height:100%;background-color: #3a3a3a;text-align:center;color:white">
+                    <div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%)">
+                        <div style="margin-bottom:20px;font-weight:bold">Sorry, you must have Adobe Flash to view this content.</div>
+                        <div class="closeBtn" onclick="$(this).parent().parent().parent().css('overflow-y', 'scroll');$(this).parent().parent().remove()">OH, GO TO HERE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           
+            <div style="position:relative;display:block;height:600px;width:100%;margin:auto;">
+                <img style="position:absolute;top:0;width:600px;left:50%;transform: translateY(-50%) translateX(-50%);z-index:-1;filter: brightness(.5); animation: flotation 5s infinite ease-in-out" src="whatwg.svg"/>
+                <div style="position:absolute;width:100%;height:100%;left:0;background-image:url('ground.svg');background-size: 300px auto;filter: brightness(.5)"></div>
+                <!--<div style="position:absolute;top:0;left:0;width:100%;height:100px;background-image:linear-gradient(black,transparent);"></div>-->
+                <div style="position:absolute;width:100%;height:calc(100% - 100px);top:100px;left:0;background-image:url('suff.svg');background-size:57-0px auto;filter: brightness(.8)"></div>
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>

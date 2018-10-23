@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+        <script src="../_turbo/turbolinks.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../resizer.js"></script>
+        <link rel="stylesheet" href="../template.css" />
+        <style>
+            #clippy {
+                animation: flotation 2s infinite ease-in-out;
+            }
+            
+            #clippy > div {
+                opacity:0;pointer-events:none;transition:0.3s;font-family:Arial, sans-serif;
+            }
+            
+            /*#clippy:hover > div {
+                opacity:1;pointer-events:all;
+            }*/
+            
+            @-webkit-keyframes flotation {
+                0% {
+                        -webkit-transform: translateX(calc(-50% + 50px)) translateY(-10px);
+                }
+                50% {
+                        -webkit-transform: translateX(calc(-50% + 50px)) translateY(10px);
+                }
+                100% {
+                        -webkit-transform: translateX(calc(-50% + 50px)) translateY(-10px);
+                }
+            }
+            .clippybutton {
+                transition:0.5s;
+                cursor:pointer;
+            }
+            .clippybutton:hover {
+                background-color:lightgray;
+            }
+            #bg {
+                background-image:linear-gradient(#B27F7F, #AE6A6A);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="progress" style="">
+            <span style="position:relative;display:inline-block">
+                <span id="title">
+                    <span>Circle IV</span>
+                    <div id="pgTool"></div>
+                </span>
+                <span class="desc">The Selective</span>
+            </span>
+            <div id="pgToolDisplay" style="position:relative;overflow-y: hidden;">
+                <p>Here lies <a target="_parent" href="https://www.youtube.com">YouTube</a> (a child of Google), <a target="_parent" href="https://www.airbnb.com">Airbnb</a>, and <a target="_parent" href="https://www.groupon.com">Groupon</a> for their evil deeds.</p>
+                <p>Here lie those who isolated certain web browsers at the expense of others. The allure of Internet Explorer, and later Google Chrome, enticed these sinners to their dooms.</p><p>In their efforts to isolate the browser, they deviated from standard web syntax and endangered the stability of the Internet. For crippling other browsers at the expense of others, they now are forced to shamble around the circle one-legged, an eternal reminder of the aims of their websites.</p><p><strong>Enforcing this circle is Clippy, the most iconic of the Monsters.</strong> Clippy pokes anyone who fails to move with his red-hot tail. Clippy is notorious for being annoying in his functions, marking the end of the appearance-oriented portion of web design hell and beginning the function-oriented portion.</p>
+                <div id="blocker" style="position: absolute;top:0;left:0;width:100%;height:100%;background-color: #3a3a3a;text-align:center;color:white">
+                    <div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%)">
+                        <div style="margin-bottom:20px;font-weight:bold">Sorry, you must have Google Chrome to view this content.</div>
+                        <div class="closeBtn" onclick="$(this).parent().parent().parent().css('overflow-y', 'scroll');$(this).parent().parent().remove()">SILENCE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div id="content" style="position: absolute;bottom:0;left:0;width:100%;">
+           <div style="position:relative;display:block;height:200px;width:100%;max-width: 760px;margin:auto;">
+                <div id="clippy" style="position:absolute;left:50%; bottom:240px">
+                    <img src="clippy.svg" style="height:300px;">
+                    <div style="position:absolute;top:0;left:-200px;width:200px;height:100px;background-color:palegoldenrod;padding:10px;border:1px black solid;border-radius:5px;">
+                        Looks like you're trying to navigate Hell. Want help with that?
+                        <div id="yes" onclick="alert('Nope!');$('#clippy > div').css('opacity', '0');$('#clippy > div').css('pointer-events', 'none');" class="clippybutton" style="position:absolute;left:5px;bottom:5px;border:inherit;padding: 3px 0;width:70px;text-align:center;">Yes</div>
+                        <div class="clippybutton" style="position:absolute;right:5px;bottom:5px;border:inherit;padding: 3px 0;width:70px;text-align:center;" onclick="$('#clippy > div').css('opacity', '0');$('#clippy > div').css('pointer-events', 'none');">No</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="position:relative;display:block;height:160px;background-color:#666666;width:100%;margin:auto;background-image:url(../gtile.svg);background-size:150px;background-position: top right;background-repeat: repeat;width:100%;margin:auto;">
+                <div style="position:absolute;bottom:100%;height:150px;width:100%;margin:auto;background-image: url('lshade.svg')"></div>    
+                <div style="position:absolute;bottom:calc(100% - 108px);height:150px;width:100%;margin:auto;background-image: url('lshade.svg')"></div>    
+                <div style="position:absolute;bottom:calc(100% - 54px);display:block;height:150px;width:calc(100% + 100px);transform: translateX(-82px);margin:auto;background-image: url('lshade.svg')"></div>    
+            </div>
+        </div>
+        <script>
+            $("#pgToolDisplay").fadeToggle(0);
+            
+            
+            $("#pgTool").on("click", function() {
+                $("#pgToolDisplay").fadeToggle(200);
+            });
+            
+            // so no immediate repeats
+            $("#clippy").mouseenter(function() {
+                $("#clippy > div").css("opacity", "1");
+                $("#clippy > div").css("pointer-events", "all");
+            });
+            
+            navigator.sayswho = (function(){
+                var ua= navigator.userAgent, tem,
+                M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+                if(/trident/i.test(M[1])){
+                    tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+                    return 'IE '+(tem[1] || '');
+                }
+                if(M[1]=== 'Chrome'){
+                    tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+                    if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+                }
+                M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+                if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+                return M.join(' ');
+            })();
+            
+            $(document).ready(function() {
+                if(navigator.sayswho.indexOf("Chrome")!=-1) { $('#blocker').remove();$("#pgToolDisplay").css('overflow-y', 'scroll'); }
+            });
+        </script>
+    </body>
+</html>
